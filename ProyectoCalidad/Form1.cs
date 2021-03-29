@@ -56,7 +56,7 @@ namespace ProyectoCalidad
                 base_calidadDataSetTableAdapters.VuelosTableAdapter vuelosTableAdapter = new base_calidadDataSetTableAdapters.VuelosTableAdapter();
                 vuelosTableAdapter.Insert(codigoVuelo, companiaAerea, pais, arrivalDeparture, capacidad, aeropuerto);
 
-                //limpia del formulario
+                //limpia del formulario una vez que se hizo la insercion
                 textBox1.Clear();
                 comboBox1.SelectedIndex = -1;
                 comboBox2.SelectedIndex = -1;
@@ -64,7 +64,7 @@ namespace ProyectoCalidad
                 comboBox4.SelectedIndex = -1;
                 comboBox5.SelectedIndex = -1;
 
-                //refresca el grid
+                //refresca el grid, es decir, recarga para que salgan los nuevos valores
                 this.vuelosTableAdapter.Fill(this.base_calidadDataSet.Vuelos);
             }
             catch (Exception ex)
